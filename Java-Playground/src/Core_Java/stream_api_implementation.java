@@ -1,6 +1,7 @@
 
 package Core_Java;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -66,5 +67,20 @@ public class stream_api_implementation {
                 .toList();
 
         unwatched.forEach(System.out::println);
+
+//        List<Integer> nums = Arrays.asList(5, 12, 8, 21, 14, 3, 12);
+//        List<Integer> res = nums.stream()
+//                .filter(num->num>10)
+//                .toList();
+
+//        res.forEach(System.out::println);
+
+        List<Integer> nums = Arrays.asList(5, 12, 8, 21, 14, 3, 12);
+        List<Integer> res = nums.stream()
+                .filter(num->num%2==0)
+                .map(num->num*num)
+                .toList();
+
+        res.forEach(System.out::println);
     }
 }
